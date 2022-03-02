@@ -153,7 +153,7 @@ export default function Home(
   )
 }
 
-export async function getStaticProps()
+export async function getServerSideProps()
 {
   // Fetch data from external API
   // Fetch amount of redirects from /api/redirects/amount
