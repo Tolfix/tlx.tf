@@ -3,11 +3,11 @@ name: Docker Image - Frontend
 on:
   push:
     paths:
-      - './frontend/pages/**'
-      - './frontend/components/**'
-      - './frontend/styles/**'
-      - './frontend/public/**'
-      - './frontend/Dockerfile'
+      - 'frontend/pages/**'
+      - 'frontend/components/**'
+      - 'frontend/styles/**'
+      - 'frontend/public/**'
+      - 'frontend/Dockerfile'
     branches:
       - master
 

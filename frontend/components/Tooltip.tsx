@@ -27,9 +27,10 @@ export function Tooltip({ children, tooltipText }: {
         >
             <div
                 className="
-                absolute whitespace-no-wrap bg-gradient-to-r 
-                from-green-300 to-green-500 text-white px-4 py-2
-                rounded flex items-center transition-all duration-150"
+                    absolute whitespace-no-wrap bg-gradient-to-r 
+                    from-green-300 to-green-500 text-white px-4 py-2
+                    rounded flex items-center transition-all duration-150
+                "
                 style={{ left: "100%", opacity: 0 }}
                 // @ts-ignore
                 ref={tipRef}
