@@ -10,8 +10,7 @@ export default class _Document extends Document
                     <Head>
                         <meta charSet="utf-8" />
                         <link rel="manifest" href="/manifest.json" />
-                        <link rel="apple-touch-icon" href="/icon-512x512.png" />
-                        <meta name="theme-color" content="#4aa447" />
+                        <link rel="shortcut icon" href="https://cdn.tolfix.com/images/TX-Small.png" type="image/x-icon" />
                     </Head>
                     <body className="bg-[#cde9c4]">
                         <Main />
