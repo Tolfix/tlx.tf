@@ -19,10 +19,3 @@ export const Express_Session_Secret = process.env.SESSION_SECRET ?? require("cry
 
 // Database
 export const MongoDB_URI = process.env.MONGO_URI ?? "mongodb://localhost/cpg";
-
-// Get version of the app from package.json
-export const GetVersion: () => string = () =>
-{
-    const package_json = require("../package.json");
-    return (package_json?.version ?? "0.0.0");
-};

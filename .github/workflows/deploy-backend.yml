@@ -3,8 +3,8 @@ name: Docker Image - Backend
 on:
   push:
     paths:
-      - './backend/src/**'
-      - './backend/package.json'
+      - 'backend/src/**'
+      - 'backend/package.json'
     branches:
       - master
 
