@@ -39,7 +39,7 @@ export default function Home(
 
   const fetchNewRedirect = async (redirect: string) =>
   {
-    const response = await fetch(`${config.backend}/api/redirect`, {
+    const response = await fetch(`/api/redirect`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
