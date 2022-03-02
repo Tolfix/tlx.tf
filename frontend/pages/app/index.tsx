@@ -158,7 +158,7 @@ export async function getServerSideProps()
   // Fetch data from external API
   // Fetch amount of redirects from /api/redirects/amount
   // Pass data to the page via props
-  const amountOfRedirects = await (await fetch(`${config.backend}/api/redirects/amount`)).json();
+  const amountOfRedirects = await (await fetch(`${process.env.BACKEND_URL}/api/redirects/amount`)).json();
   return {
     props: {
       amountOfRedirects: amountOfRedirects.amount,
