@@ -1,4 +1,4 @@
-// @Tolfix 2022-03-02
+// Copyright (c) Tolfix. Licensed under the MIT License.
 require("dotenv").config();
 import "./Database/Mongo";
 import "./Server/Server";
