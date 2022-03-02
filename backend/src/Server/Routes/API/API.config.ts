@@ -66,7 +66,8 @@ export default class APIRouter
             RedirectCache.set(newRedirect["id"], newRedirect);
             
             return res.json({
-                ...newRedirect,
+                redirect: newRedirect.redirect,
+                id: newRedirect.id,
                 redirect_url: `${Full_Domain}/r?${newRedirect["id"]}`,
             });
         });
