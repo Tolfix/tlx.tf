@@ -128,11 +128,11 @@ export default function Home(
               </div>
             </form>
           </div>
-          <div className='mt-14'>
+          <div className='mt-14 max-w-sm sm:max-w-none hidden sm:block'>
               {/* How to use the api, curl code */}
               <h1 className='text-4xl font-mono font-bold text-green-400'>Usage of API</h1>
               <code lang='shell' className='
-                block whitespace-pre 
+                block whitespace-pre
                 bg-black text-white rounded px-5 shadow
               '>
                 {`$ curl -X POST -H "Content-Type: application/json" -d '{"redirect": "https://example.com"}' https://tlx.tf/api/redirect`}
