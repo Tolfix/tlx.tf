@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Modal } from '../components/Modal';
 import { Tooltip } from '../components/Tooltip';
 import { io } from 'socket.io-client';
+import Footer from '../components/Footer';
 
 const { publicRuntimeConfig: config } = getConfig()
 
@@ -39,7 +40,8 @@ export default function Home(
 
   const fetchNewRedirect = async (redirect: string) =>
   {
-    const response = await fetch(`/api/redirect`, {
+    // check if debug
+    const response = await fetch(`${config.debug ? "http://localhost:8080" : ""}/api/redirect`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -148,7 +150,7 @@ export default function Home(
           </div>
         </div>
       </div>
-    
+      <Footer />
     </>
   )
 }
