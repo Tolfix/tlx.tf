@@ -15,16 +15,21 @@ export default class RedirectRouter
         this.router.get("/", async (req, res) =>
         {
             const id = (Object.keys(req.query))[0];
-            const cRedirect = RedirectCache.get(id);
+            let cRedirect = RedirectCache.get(id);
             if(cRedirect)
-                return res.redirect(cRedirect.redirect);
-
+            {
+                res.redirect(cRedirect.redirect);
+                cRedirect.usedBy.push((req.headers['x-forwarded-for'] || req.socket.remoteAddress) as string);
+                return RedirectCache.save(id);
+            }
             // assuming no cache, we find in database
             const redirect = await RedirectModel.findOne({ id: id });
             if(redirect)
             {
+                redirect.usedBy.push((req.headers['x-forwarded-for'] || req.socket.remoteAddress) as string);
                 RedirectCache.set(redirect["id"], redirect);
-                return res.redirect(redirect.redirect);
+                res.redirect(redirect.redirect);
+                return RedirectCache.save(redirect["id"]);
             }
 
             // if not found, we return 404
